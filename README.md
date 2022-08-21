@@ -6,4 +6,6 @@
 
 ## Contribute!
 
-You can create a **pull request** after editing the [Book dataset (csv)](public/books.csv).
+You can create a **pull request** after editing the [index.html file](public/index.html).
+
+If you would like to add or change books or links, contact us on [esben@apartresearch.com](mailto:esben@apartresearch.com) either for access to the database or to add it manually.

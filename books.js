@@ -1,4 +1,4 @@
-const books = [
+let books = [
   {
     Name: "Eliciting Latent Knowledge",
     Slug: "eliciting-latent-knowledge",

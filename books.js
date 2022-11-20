@@ -1,4 +1,4 @@
-export const books = [
+const books = [
   {
     Name: "Eliciting Latent Knowledge",
     Slug: "eliciting-latent-knowledge",

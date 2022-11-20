@@ -184,54 +184,51 @@
             let beginner = 1;
             let ml = 1;
             let aisafety = 1;
-            if (error) {
-              console.log(error);
-            } else {
-              for (let i = 0; i < data.length; i++) {
-                if (
-                  data[i].coming_from != null &&
-                  data[i].coming_from.includes("First entry")
-                ) {
-                  document.getElementById("beginner-parent").innerHTML += `
+            for (let i = 0; i < data.length; i++) {
+              if (
+                data[i].coming_from != null &&
+                data[i].coming_from.includes("First entry")
+              ) {
+                document.getElementById("beginner-parent").innerHTML += `
             <a href="${
               data[i].Link
             }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${beginner++}. ${
-                    data[i].Name
-                  }<span class="author">${data[i].Author}, ${
-                    data[i].page_count
-                  } pages</span></h4></a>
+                  data[i].Name
+                }<span class="author">${data[i].Author}, ${
+                  data[i].page_count
+                } pages</span></h4></a>
           `;
-                }
-                if (
-                  data[i].coming_from != null &&
-                  data[i].coming_from.includes("ML engineering")
-                ) {
-                  document.getElementById("ml-parent").innerHTML += `
+              }
+              if (
+                data[i].coming_from != null &&
+                data[i].coming_from.includes("ML engineering")
+              ) {
+                document.getElementById("ml-parent").innerHTML += `
             <a href="${
               data[i].Link
             }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${ml++}. ${
-                    data[i].Name
-                  }<span class="author">${data[i].Author}, ${
-                    data[i].page_count
-                  } pages</span></h4></a>
+                  data[i].Name
+                }<span class="author">${data[i].Author}, ${
+                  data[i].page_count
+                } pages</span></h4></a>
           `;
-                }
-                if (
-                  data[i].coming_from != null &&
-                  data[i].coming_from.includes("AI safety upskill to ML")
-                ) {
-                  document.getElementById("aisafety-parent").innerHTML += `
+              }
+              if (
+                data[i].coming_from != null &&
+                data[i].coming_from.includes("AI safety upskill to ML")
+              ) {
+                document.getElementById("aisafety-parent").innerHTML += `
             <a href="${
               data[i].Link
             }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${aisafety++}. ${
-                    data[i].Name
-                  }<span class="author">${data[i].Author}, ${
-                    data[i].page_count
-                  } pages</span></h4></a>
+                  data[i].Name
+                }<span class="author">${data[i].Author}, ${
+                  data[i].page_count
+                } pages</span></h4></a>
           `;
-                }
               }
             }
+
             //document.getElementById("loading-gauntlet").style.display = "none";
           </script>
         </div>

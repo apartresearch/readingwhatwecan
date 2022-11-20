@@ -178,58 +178,30 @@
             src="https://readingwhatwecan.com/books.js"
           ></script>
           <script>
-            const data = books;
-            data.sort((a, b) => a.Prior - b.Prior);
-            console.log(data);
-            let beginner = 1;
-            let ml = 1;
-            let aisafety = 1;
-            for (let i = 0; i < data.length; i++) {
-              if (
-                data[i].coming_from != null &&
-                data[i].coming_from.includes("First entry")
-              ) {
-                document.getElementById("beginner-parent").innerHTML += `
+            const PrintItem = (entry, target) => {
+              if (entry)
+                document.getElementById(target).innerHTML += `
             <a href="${
-              data[i].Link
-            }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${beginner++}. ${
-                  data[i].Name
-                }<span class="author">${data[i].Author}, ${
-                  data[i].page_count
+              entry.Link
+            }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${
+                  i + 1
+                }. ${entry.Name}<span class="author">${entry.Author}, ${
+                  entry.page_count
                 } pages</span></h4></a>
           `;
-              }
-              if (
-                data[i].coming_from != null &&
-                data[i].coming_from.includes("ML engineering")
-              ) {
-                document.getElementById("ml-parent").innerHTML += `
-            <a href="${
-              data[i].Link
-            }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${ml++}. ${
-                  data[i].Name
-                }<span class="author">${data[i].Author}, ${
-                  data[i].page_count
-                } pages</span></h4></a>
+              else
+                document.getElementById(target).innerHTML += `
+            <a href="https://github.com/apartresearch/readingwhatwecan/edit/main/public/books.js" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${
+              i + 1
+            }. Click to suggest a book<span class="author">Github</span></h4></a>
           `;
-              }
-              if (
-                data[i].coming_from != null &&
-                data[i].coming_from.includes("AI safety upskill to ML")
-              ) {
-                document.getElementById("aisafety-parent").innerHTML += `
-            <a href="${
-              data[i].Link
-            }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${aisafety++}. ${
-                  data[i].Name
-                }<span class="author">${data[i].Author}, ${
-                  data[i].page_count
-                } pages</span></h4></a>
-          `;
-              }
-            }
+            };
 
-            //document.getElementById("loading-gauntlet").style.display = "none";
+            for (i = 0; i < 20; i++) {
+              PrintItem(first_entry[i], "beginner-parent");
+              PrintItem(ml[i], "ml-parent");
+              PrintItem(ais[i], "aisafety-parent");
+            }
           </script>
         </div>
         <div class="gauntlet-wrapper hidden">

@@ -19,13 +19,6 @@
       property="twitter:image"
     />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="css/webflow.css" rel="stylesheet" type="text/css" />
-    <link
-      href="css/aisafetyideas.webflow.css"
-      rel="stylesheet"
-      type="text/css"
-    />
     <script
       src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"
@@ -55,6 +48,7 @@
     </script>
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.ico" rel="apple-touch-icon" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="body-2">
     <header id="nav" class="sticky-nav">
@@ -73,24 +67,31 @@
                 class="nav-logo"
             /></a>
           </li>
-          <li>
-            <a
-              href="mailto:Nnmauthe@gmail.com?subject=Reading%20what%20we%20can"
-              class="button utility w-button"
-              >Contact</a
-            >
-          </li>
         </ul>
       </nav>
     </header>
     <div class="section-3 wf-section">
       <div class="header w-container">
         <h1 class="heading-3">
-          Effective upskilling through reading challenges
+          Reading what we can
+          <span class="subtitle">Reading lists for the future</span>
         </h1>
+        <p class="purpose">
+          The Gauntlet is a challenge to read 20 books or articles in 20 days.
+          Post online with
+          <a href="https://twitter.com/search?q=%23rwwc" target="_blank"
+            >#rwwc</a
+          >. It is <strong>in development</strong> so
+          <a
+            href="mailto:esben@apartresearch.com?subject=AI%20Gauntlet%20suggestion%3A%20"
+            >write to us</a
+          >
+          if you would like a feature, learning path, book or paper added to the
+          project!
+        </p>
       </div>
+
       <div class="container-2 w-container">
-        <p class="purpose subtitle">I am interested in...</p>
         <div
           data-current="I am a beginner in AI safety"
           data-easing="ease"
@@ -103,13 +104,13 @@
               data-w-tab="I am a beginner in AI safety"
               class="gauntlet-tab w-inline-block w-tab-link w--current"
             >
-              <div>AI safety basics</div>
+              <div>AI safety basics</div>
             </a>
             <a
               data-w-tab="I come from ML engineering"
               class="gauntlet-tab w-inline-block w-tab-link"
             >
-              <div>ML engineering &amp; AI safety</div>
+              <div>ML engineering &amp; AI safety</div>
             </a>
             <a
               data-w-tab="I come from AI safety and want to upskill in ML"
@@ -118,22 +119,13 @@
               <div>ML upskilling</div>
             </a>
           </div>
+
           <div class="w-tab-content">
             <div
               data-w-tab="I am a beginner in AI safety"
               class="w-tab-pane w--tab-active"
             >
-              <div id="beginner-parent" class="gauntlet-wrapper">
-                <div id="loading-gauntlet" class="loading-2">
-                  <img
-                    src="images/giphy.gif"
-                    loading="lazy"
-                    width="60"
-                    alt=""
-                  />
-                  <p class="loading-text-2">Loading...</p>
-                </div>
-              </div>
+              <div id="beginner-parent" class="gauntlet-wrapper"></div>
             </div>
             <div data-w-tab="I come from ML engineering" class="w-tab-pane">
               <div id="ml-parent" class="gauntlet-wrapper"></div>
@@ -146,32 +138,7 @@
             </div>
           </div>
         </div>
-        <p class="footnote">
-          <em>When you&#x27;re done here, check out </em>
-          <a
-            href="https://vkrakovna.wordpress.com/ai-safety-resources/#technical-audience"
-            target="_blank"
-            ><em>Kravkovna&#x27;s list</em></a
-          ><em> and the </em>
-          <a
-            href="https://docs.google.com/document/d/1mTm_sT2YQx3mRXQD6J2xD2QJG1c3kHyvX8kQc_IQ0ns/edit"
-            target="_blank"
-            ><em>AGI Safety Fundamentals curriculum</em></a
-          ><em>, </em>
-        </p>
-        <p class="purpose">
-          The Gauntlet is a challenge to read 20 books or articles in 20 days.
-          Post online with
-          <a href="https://twitter.com/search?q=%23aigauntlet" target="_blank"
-            >#rwwc</a
-          >. It is <strong>in development</strong> so
-          <a
-            href="mailto:esben@apartresearch.com?subject=AI%20Gauntlet%20suggestion%3A%20"
-            >write to us</a
-          >
-          if you would like a feature, learning path, book or paper added to the
-          project!
-        </p>
+
         <div class="w-embed w-script">
           <script
             type="text/javascript"
@@ -183,17 +150,35 @@
                 document.getElementById(target).innerHTML += `
             <a href="${
               entry.Link
-            }" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${
-                  i + 1
-                }. ${entry.Name}<span class="author">${entry.Author}, ${
+            }" target="_blank" class="hypothesis book responsive w-inline-block"><span>${
+                  i + 1 < 10 ? "0" + (i + 1) : i + 1
+                }</span><h4 class="idea-header book">${
+                  entry.Name
+                }</h4><span class="author" title="${entry.Author}">${
+                  entry.Author.length > 30
+                    ? entry.Author.slice(0, 30) + "..."
+                    : entry.Author
+                }</span><span class="link">${
+                  entry.Link.includes("amazon")
+                    ? "Amazon"
+                    : entry.Link.includes(".pdf")
+                    ? "PDF"
+                    : entry.Link.includes("lesswrong")
+                    ? "LessWrong"
+                    : entry.Link.includes("arxiv")
+                    ? "ArXiv"
+                    : entry.Link.includes("docs.google")
+                    ? "Google Docs"
+                    : "Article"
+                } <img class="link-icon" src="./images/arrow-up-outline.svg" /></span><span>${
                   entry.page_count
-                } pages</span></h4></a>
+                } pages</span></a>
           `;
               else
                 document.getElementById(target).innerHTML += `
-            <a href="https://github.com/apartresearch/readingwhatwecan/edit/main/public/books.js" target="_blank" class="hypothesis book responsive w-inline-block"><h4 class="idea-header book">${
-              i + 1
-            }. Click to suggest a book<span class="author">Github</span></h4></a>
+            <a href="https://github.com/apartresearch/readingwhatwecan/edit/main/public/books.js" target="_blank" class="hypothesis book responsive w-inline-block"><span>${
+              i + 1 < 10 ? "0" + (i + 1) : i + 1
+            }</span><h4 class="idea-header book">Click to suggest a book</h4><span class="author">Github</span><span>Link <img class="link-icon" src="./images/arrow-up-outline.svg" /></span><span>.</span></a>
           `;
             };
 
@@ -203,100 +188,6 @@
               PrintItem(ais[i], "aisafety-parent");
             }
           </script>
-        </div>
-        <div class="gauntlet-wrapper hidden">
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading noone is damning the horses ar<span class="author"
-                >author, 64 pages</span
-              >
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
-          <a href="#" class="hypothesis book w-inline-block">
-            <h4 class="idea-header book">
-              1. Heading <span class="author">author, 64 pages</span>
-            </h4>
-          </a>
         </div>
       </div>
     </div>
@@ -308,13 +199,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/webflow.js" type="text/javascript"></script>
-    <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script async="" src="https://tally.so/widgets/embed.js"></script>
-    <script>
-      tippy(".apply-button");
-    </script>
+
     <!-- 100% privacy friendly analytics -->
     <script
       async

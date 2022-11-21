@@ -4,8 +4,14 @@ body {
 
 p,
 li,
-div {
+div,
+a {
   font-size: 1.2rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .nav-grid {
@@ -170,8 +176,14 @@ h1 {
   margin-top: 4rem;
 }
 
-.purpose {
-  margin: 0.5rem 0 2rem 0;
+.purpose,
+.contribute {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.contribute {
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .subtitle {

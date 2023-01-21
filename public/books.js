@@ -40,7 +40,7 @@ let first_entry = [
   {
     Name: "Research agenda for AI alignment",
     Link: "https://intelligence.org/files/TechnicalAgenda.pdf",
-    Author: "David Soares, Benya Fallenstein",
+    Author: "Nate Soares, Benya Fallenstein",
     page_count: 11,
   },
   {

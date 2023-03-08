@@ -130,6 +130,12 @@
             >
               <div>ML upskilling</div>
             </a>
+            <a
+              data-w-tab="Sci-fi"
+              class="gauntlet-tab w-inline-block w-tab-link"
+            >
+              <div>AI safety-relevant sci-fi</div>
+            </a>
           </div>
 
           <div class="w-tab-content">
@@ -147,6 +153,9 @@
               class="w-tab-pane"
             >
               <div id="aisafety-parent" class="gauntlet-wrapper"></div>
+            </div>
+            <div data-w-tab="Sci-fi" class="w-tab-pane">
+              <div id="scifi-parent" class="gauntlet-wrapper"></div>
             </div>
           </div>
         </div>
@@ -198,6 +207,7 @@
               PrintItem(first_entry[i], "beginner-parent");
               PrintItem(ml[i], "ml-parent");
               PrintItem(ais[i], "aisafety-parent");
+              PrintItem(scifi[i], "scifi-parent");
             }
           </script>
         </div>

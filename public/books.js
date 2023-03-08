@@ -332,3 +332,110 @@ let ais = [
     page_count: 21,
   },
 ];
+
+let scifi = [
+  {
+    Name: "Crystal Society trilogy: Inside the mind of an AI",
+    Link: "http://crystal.raelifin.com/",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1453538880i/28678856.jpg",
+    Author: "Max Harms",
+    page_count: 559,
+  },
+  {
+    Name: "Do Androids Dream of Electric Sheep?",
+    Link: "https://www.amazon.com/Androids-Dream-Electric-Sheep-inspiration/dp/0345404475",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1507838927i/36402034.jpg",
+    Author: "Philip K. Dick",
+    page_count: 258,
+  },
+  {
+    Name: "The Last Question",
+    Link: "https://physics.princeton.edu/ph115/LQ.pdf",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1274107046i/4808763.jpg",
+    Author: "Isaac Asimov",
+    page_count: 32,
+  },
+  {
+    Name: "The Fable of the Dragon-Tyrant",
+    Link: "https://nickbostrom.com/fable/dragon",
+    Image:
+      "https://th.bing.com/th/id/R.af23d486490d93e49e87d0197cd3a9ea?rik=jPRNIP%2fEtdEz2g&riu=http%3a%2f%2fimg.youtube.com%2fvi%2fcZYNADOHhVY%2fmaxresdefault.jpg&ehk=%2btKTFs%2f9XMtAQHOecNQfPGSLYKYg5p0iyUzTQANJcoQ%3d&risl=&pid=ImgRaw&r=0",
+    Author: "Nick Bostrom",
+    page_count: 16,
+  },
+  {
+    Name: "Harry Potter and the Methods of Rationality (#1 of 6)",
+    Link: "https://www.hpmor.com/",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1428715103i/25337627.jpg",
+    Author: "Eliezer Shlomo Yudkowsky",
+    page_count: 343,
+  },
+  {
+    Name: "Logic Beach",
+    Link: "https://www.amazon.com/gp/product/B077SDRMHR",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1512496588i/36944280.jpg",
+    Author: "Exurb1a",
+    page_count: 240,
+  },
+  {
+    Name: "Neuromancer",
+    Link: "https://archive.org/details/neuromancer-william-gibson/1+of+2.mp3",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1167348726i/22328.jpg",
+    Author: "William Gibson",
+    page_count: 271,
+  },
+  {
+    Name: "Flatland: A Romance of Many Dimensions",
+    Link: "https://www.gutenberg.org/ebooks/201",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1435435775i/433567.jpg",
+    Author: "Edwin A. Abbott",
+    page_count: 96,
+  },
+  {
+    Name: "The Dark Forest (#2 of Three Body Problem)",
+    Link: "https://www.amazon.com/The-Dark-Forest-audiobook/dp/B010R28SZ4",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1412064931i/23168817.jpg",
+    Author: "Cixin Liu",
+    page_count: 512,
+  },
+  {
+    Name: "The Bridge to Lucy Dunne",
+    Link: "https://www.amazon.com/gp/product/B01F7IQEHC/",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462778687i/30137549.jpg",
+    Author: "Exurb1a",
+    page_count: 177,
+  },
+  {
+    Name: "We Are Legion (We Are Bob)",
+    Link: "https://www.amazon.com/gp/product/B01LWAESYQ",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1474344826i/32109569.jpg",
+    Author: "Dennis E. Taylor",
+    page_count: 400,
+  },
+  {
+    Name: "Of Ants and Dinosaurs",
+    Link: "https://www.amazon.com/gp/product/B00838GX52",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1363385810i/15159960.jpg",
+    Author: "Cixin Liu",
+    page_count: 55,
+  },
+  {
+    Name: "Geometry for Ocelots",
+    Link: "https://www.amazon.com/gp/product/B0969DPK7H/ref=x_gr_bb_amazon?ie=UTF8&tag=x_gr_bb_amazon-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B0969DPK7H&SubscriptionId=1MGPYB6YW3HWK55XCGG2",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1622651140i/58245377.jpg",
+    Author: "Exurb1a",
+    page_count: 325,
+  },
+];

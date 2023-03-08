@@ -49,6 +49,23 @@
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.ico" rel="apple-touch-icon" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      .book-image {
+        max-width: 300px;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        z-index: -1;
+      }
+
+      .hypothesis.book:hover .book-image {
+        display: block;
+      }
+    </style>
   </head>
   <body class="body-2">
     <header id="nav" class="sticky-nav">
@@ -193,7 +210,11 @@
                     : "Article"
                 } <img class="link-icon" src="./images/arrow-up-outline.svg" /></span><span>${
                   entry.page_count
-                } pages</span></a>
+                } pages</span>${
+                  entry.Image
+                    ? `<img class="book-image" src="${entry.Image}" loading="lazy" alt="" />`
+                    : ""
+                }</a>
           `;
               else
                 document.getElementById(target).innerHTML += `

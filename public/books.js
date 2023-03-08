@@ -40,7 +40,7 @@ let first_entry = [
   {
     Name: "Research agenda for AI alignment",
     Link: "https://intelligence.org/files/TechnicalAgenda.pdf",
-    Author: "David Soares, Benya Fallenstein",
+    Author: "Nate Soares, Benya Fallenstein",
     page_count: 11,
   },
   {
@@ -181,7 +181,7 @@ let ml = [
   {
     Name: "Research agenda for AI alignment",
     Link: "https://intelligence.org/files/TechnicalAgenda.pdf",
-    Author: "David Soares, Benya Fallenstein",
+    Author: "Nate Soares, Benya Fallenstein",
     page_count: 11,
   },
   {
@@ -276,6 +276,7 @@ let ml = [
   },
   {
     Name: "The Alignment Problem",
+    
     Link: "https://smile.amazon.com/Alignment-Problem-Machine-Learning-Values/dp/0393635821?sa-no-redirect=1",
     Author: "Brain Christian",
     page_count: 496,

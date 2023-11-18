@@ -439,4 +439,12 @@ let scifi = [
     Author: "Exurb1a",
     page_count: 325,
   },
+  {
+    Name: "VIRTUA",
+    Link: "https://www.amazon.com/VIRTUA-Intelligent-Unstoppable-Karl-Olsberg-ebook/dp/B0C3CFD5VB",
+    Image:
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1682326551i/139418011.jpg",
+    Author: "Karl Olsberg",
+    page_count: 328,
+  },
 ];

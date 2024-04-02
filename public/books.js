@@ -372,7 +372,7 @@ let scifi = [
     Link: "https://www.lesswrong.com/posts/rSiybWzeiG8agYtNr/virtua-a-novel-about-ai-alignment",
     Image: "https://m.media-amazon.com/images/I/61ghd3gJFML._SY466_.jpg",
     Author:  "Karl von Wendt",
-    page_count 328
+    page_count: 328,
   },
   {
     Name: "Harry Potter and the Methods of Rationality (#1 of 6)",

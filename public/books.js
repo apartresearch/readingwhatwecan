@@ -2,6 +2,12 @@
 
 let first_entry = [
   {
+    Name: "The Coming Technological Singularity (1994)",
+    Link: "https://ntrs.nasa.gov/api/citations/19940022856/downloads/19940022856.pdf",
+    Author: "Vernor Vinge",
+    page_count: 15,
+  },
+  {
     Name: "Preventing an AI-related catastrophe",
     Link: "https://80000hours.org/problem-profiles/artificial-intelligence/",
     Author: "Benjamin Hilton",

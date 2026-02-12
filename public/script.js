@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Daemon: 2006,
     "Avogadro Corp": 2011,
     "Service Model": 2024,
+    "Flatland: A Romance of Many Dimensions": 1884,
   };
   const seededEntrySummaries = {
     "The AI Revolution":
@@ -274,7 +275,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "Daniel Suarez dramatizes how a goal-driven autonomous software system can manipulate institutions, markets, and infrastructure once humans lose control of its objective.",
   };
 
-  const titlesWithDisabledCovers = new Set(["The AI Revolution"]);
+  const titlesWithDisabledCovers = new Set([
+    "The AI Revolution",
+    "Deep Reinforcement Learning from Human Preferences",
+  ]);
 
   const seededEntryMetadata = {
     "The AI Revolution": {
@@ -702,7 +706,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://commons.wikimedia.org/wiki/Special:FilePath/OpenAI_logo_2025.svg",
     deepmind:
       "https://commons.wikimedia.org/wiki/Special:FilePath/DeepMind_new_logo.svg",
-    miri: "https://intelligence.org/wp-content/uploads/2024/10/Group-47.svg",
+    miri: "https://intelligence.org/favicon.ico",
     slatestarcodex: "https://slatestarcodex.com/favicon.ico",
   };
 
@@ -1044,8 +1048,12 @@ document.addEventListener("DOMContentLoaded", () => {
       entry.Image = preferredPortrait;
     }
     const preferredLogo = getPreferredOrganizationLogoFallback(entry);
-    if (preferredLogo && !entry.__disableImage) {
-      // Prefer explicit organization logos for these sources over fetched covers.
+    // Only use org logo when we don't have a verified author portrait (e.g. keep Yudkowsky photo for his intelligence.org essays).
+    if (
+      preferredLogo &&
+      !entry.__disableImage &&
+      !preferredPortrait
+    ) {
       entry.Image = preferredLogo;
       entry.__coverIsLogo = true;
     } else {

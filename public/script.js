@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Harry Potter and the Methods of Rationality (#1 of 6)":
       "This cult-classic fanfic doubles as a tutorial on cognitive bias, game theory, and scientific reasoning for thinking about AI futures.",
     "Do Androids Dream of Electric Sheep?":
-      "Philip K. Dick probes the boundary between human empathy and artificial simulation, asking what it means to be alive in an AI world.",
+      "This foundational work is essential for AI safety because it explores the \"moral patienthood\" problem, forcing us to consider whether a sufficiently advanced AI deserves ethical protections and how we can distinguish between genuine empathy and deceptive mimicry.",
     "The Last Question":
       "Asimov's cosmic story frames intelligence, including AI, around the ultimate project of reversing entropy.",
     "The Dark Forest (#2 of Three Body Problem)":

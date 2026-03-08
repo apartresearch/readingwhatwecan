@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: ["main", "orlandott"]
   workflow_dispatch:
 
 permissions:
@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -r public/. _site/
+          touch _site/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -35,7 +35,26 @@
     <section class="hero">
       <h1>Reading What We Can</h1>
       <p class="tagline">Reading lists for the future. The Gauntlet: read 20 books or articles in 20 days.</p>
-      <p class="hero-meta">Post your progress with <a href="https://twitter.com/search?q=%23rwwc" target="_blank">#rwwc</a> &middot; <a href="https://github.com/apartresearch/readingwhatwecan" target="_blank">Contribute on GitHub</a> &middot; A project by <a href="https://apartresearch.com" target="_blank">Apart Research</a></p>
+      <p class="hero-cta"><a href="https://blog.kran.ai/audiovisual-reading" target="_blank">How do I read 20 books in 20 days? &rarr;</a></p>
+      <p class="hero-meta">Post your progress with <a href="https://twitter.com/search?q=%23rwwc" target="_blank">#rwwc</a> &middot; <a href="https://github.com/apartresearch/readingwhatwecan" target="_blank">Contribute on GitHub</a> &middot; A project by <a href="https://kran.ai" target="_blank">Esben Kran</a></p>
+      <div class="share-buttons">
+        <div class="share-group" id="share-start">
+          <button class="share-btn share-main" id="btn-start-challenge">Start Challenge</button>
+          <div class="share-targets" id="targets-start">
+            <button class="share-target" data-platform="twitter" data-action="start">X</button>
+            <button class="share-target" data-platform="linkedin" data-action="start">LinkedIn</button>
+            <button class="share-target" data-platform="copy" data-action="start">Copy</button>
+          </div>
+        </div>
+        <div class="share-group" id="share-progress">
+          <button class="share-btn share-main" id="btn-share-progress">Share Progress</button>
+          <div class="share-targets" id="targets-progress">
+            <button class="share-target" data-platform="twitter" data-action="progress">X</button>
+            <button class="share-target" data-platform="linkedin" data-action="progress">LinkedIn</button>
+            <button class="share-target" data-platform="copy" data-action="progress">Copy</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="graph-section">
@@ -44,16 +63,14 @@
         <div id="stats" class="stats"></div>
       </div>
       <div id="contribution-graph" class="contribution-graph"></div>
+      <div id="heatmap-hint" class="heatmap-hint">Check off a book to log your reading progress here</div>
       <div class="graph-footer">
-        <span class="graph-less">Less</span>
         <div class="graph-legend">
           <span class="legend-square" style="background: #161b22"></span>
-          <span class="legend-square" style="background: #0e4429"></span>
-          <span class="legend-square" style="background: #006d32"></span>
-          <span class="legend-square" style="background: #26a641"></span>
+          <span class="legend-label">No activity</span>
           <span class="legend-square" style="background: #39d353"></span>
+          <span class="legend-label">Read</span>
         </div>
-        <span class="graph-more">More</span>
       </div>
     </section>
 
@@ -81,7 +98,7 @@
     </section>
 
     <footer>
-      <p>Originally "The AI Safety Gauntlet" &mdash; a challenge to read 20 books or articles in 20 days as an introduction to AI safety. ReadingWhatWeCan is a spinout from <a href="https://apartresearch.com" target="_blank">Apart Research</a>.</p>
+      <p>Originally "The AI Safety Gauntlet" &mdash; a challenge to read 20 books or articles in 20 days as an introduction to AI safety. A project by <a href="https://kran.ai" target="_blank">Esben Kran</a>, spun out from <a href="https://apartresearch.com" target="_blank">Apart Research</a>.</p>
     </footer>
   </main>
 

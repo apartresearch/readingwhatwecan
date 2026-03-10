@@ -137,9 +137,90 @@ main {
   text-underline-offset: 2px;
 }
 
+.hero-cta {
+  margin-bottom: 8px;
+}
+
+.hero-cta a {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-cta a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero-meta a:hover {
   color: var(--accent);
   text-decoration-color: var(--accent);
+}
+
+/* Share buttons */
+.share-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.share-group {
+  position: relative;
+}
+
+.share-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.share-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.share-targets {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.share-group.open .share-targets {
+  display: flex;
+}
+
+.share-target {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  border-right: 1px solid var(--border);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.share-target:last-child {
+  border-right: none;
+}
+
+.share-target:hover {
+  color: var(--accent);
+  background: var(--hover-bg);
 }
 
 /* Contribution Graph */
@@ -196,6 +277,29 @@ main {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Heatmap hint */
+.heatmap-hint {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 6px 0;
+}
+
+/* Book cover preview */
+.cover-preview {
+  position: fixed;
+  z-index: 300;
+  pointer-events: none;
+  max-width: 150px;
+}
+
+.cover-preview img {
+  width: 150px;
+  height: auto;
+  border: 1px solid var(--border-light);
+  display: block;
+}
+
 .graph-footer {
   display: flex;
   align-items: center;
@@ -218,8 +322,8 @@ main {
   display: inline-block;
 }
 
-.graph-less, .graph-more {
-  margin: 0 4px;
+.legend-label {
+  margin-right: 8px;
 }
 
 /* Tabs */
@@ -320,8 +424,8 @@ main {
 }
 
 .book-row.completed .check-box {
-  background: var(--green-3);
-  border-color: var(--green-3);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .book-row.completed .check-box::after {

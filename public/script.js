@@ -127,6 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         pages.className = 'book-pages';
         pages.textContent = entry.page_count ? `${entry.page_count}p` : '';
 
+        if (entry.Image) {
+          row.setAttribute('data-cover', entry.Image);
+        }
+
         row.appendChild(check);
         row.appendChild(num);
         row.appendChild(title);
@@ -207,13 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const svgWidth = LEFT_PAD + actualWeeks * (CELL + GAP);
     const svgHeight = TOP_PAD + 7 * (CELL + GAP);
 
-    const colors = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
     function getColor(count) {
-      if (count === 0) return colors[0];
-      if (count === 1) return colors[1];
-      if (count === 2) return colors[2];
-      if (count === 3) return colors[3];
-      return colors[4];
+      return count > 0 ? '#39d353' : '#161b22';
     }
 
     // Build SVG
@@ -345,6 +344,126 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGraph();
     renderStats();
   }
+
+  // ── Book cover preview on hover ──
+  const coverPreview = document.createElement('div');
+  coverPreview.className = 'cover-preview';
+  coverPreview.style.display = 'none';
+  const coverImg = document.createElement('img');
+  coverPreview.appendChild(coverImg);
+  document.body.appendChild(coverPreview);
+
+  document.addEventListener('mouseenter', (e) => {
+    const row = e.target.closest('.book-row[data-cover]');
+    if (!row) return;
+    const rect = row.getBoundingClientRect();
+    const spaceRight = window.innerWidth - rect.right;
+    if (spaceRight < 180) return; // not enough space
+    coverImg.src = row.getAttribute('data-cover');
+    coverPreview.style.display = 'block';
+    coverPreview.style.top = rect.top + 'px';
+    coverPreview.style.left = (rect.right + 12) + 'px';
+  }, true);
+
+  document.addEventListener('mouseleave', (e) => {
+    const row = e.target.closest('.book-row[data-cover]');
+    if (!row) return;
+    coverPreview.style.display = 'none';
+  }, true);
+
+  // ── Heatmap hint visibility ──
+  function updateHeatmapHint() {
+    const hint = document.getElementById('heatmap-hint');
+    if (!hint) return;
+    const completed = getCompleted();
+    hint.style.display = Object.keys(completed).length === 0 ? 'block' : 'none';
+  }
+
+  // ── Sharing logic ──
+  function getShareText(action) {
+    if (action === 'start') {
+      return "I'm starting a 20 days, 20 books reading challenge on readingwhatwecan.com! I'll review every book in this thread — and if I don't finish, I'll donate $100 to @AMF. Follow along! #rwwc";
+    }
+    // Progress sharing — pick the most impressive stat
+    const completed = getCompleted();
+    const activity = getActivity();
+    const totalCompleted = Object.keys(completed).length;
+    const totalBooks = Object.values(lists).reduce((sum, l) => sum + Math.min(l.data.length, 20), 0);
+
+    // Calculate streak
+    let streak = 0;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const checkDate = new Date(today);
+    const todayKey = checkDate.toISOString().split('T')[0];
+    if (!activity[todayKey]) checkDate.setDate(checkDate.getDate() - 1);
+    while (true) {
+      const key = checkDate.toISOString().split('T')[0];
+      if (activity[key] && activity[key] > 0) {
+        streak++;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else break;
+    }
+
+    if (streak >= 3) {
+      return `I'm on a ${streak}-day reading streak! ${totalCompleted}/${totalBooks} books done on readingwhatwecan.com #rwwc`;
+    }
+    if (totalCompleted > 0 && totalCompleted / totalBooks > 0.5) {
+      return `I've read ${totalCompleted} out of ${totalBooks} books on readingwhatwecan.com! #rwwc`;
+    }
+    if (totalCompleted > 0 && totalCompleted <= 3) {
+      return `Just started the 20-books-in-20-days challenge on readingwhatwecan.com! ${totalCompleted} down, ${totalBooks - totalCompleted} to go. #rwwc`;
+    }
+    if (totalCompleted > 0) {
+      return `I've completed ${totalCompleted} readings on readingwhatwecan.com so far! #rwwc`;
+    }
+    return "I'm about to start the 20-books-in-20-days challenge on readingwhatwecan.com! #rwwc";
+  }
+
+  function shareToTwitter(text) {
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  function shareToLinkedIn(text) {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://readingwhatwecan.com')}&summary=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = orig; }, 1500);
+    });
+  }
+
+  // Toggle share targets visibility
+  document.querySelectorAll('.share-main').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.share-group');
+      group.classList.toggle('open');
+    });
+  });
+
+  // Handle share target clicks
+  document.querySelectorAll('.share-target').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.getAttribute('data-action');
+      const platform = btn.getAttribute('data-platform');
+      const text = getShareText(action);
+      if (platform === 'twitter') shareToTwitter(text);
+      else if (platform === 'linkedin') shareToLinkedIn(text);
+      else if (platform === 'copy') copyToClipboard(text, btn);
+    });
+  });
+
+  // ── Render all (updated to include hint) ──
+  const origRenderAll = renderAll;
+  renderAll = function() {
+    renderBooks();
+    renderGraph();
+    renderStats();
+    updateHeatmapHint();
+  };
 
   // Initial render
   renderAll();

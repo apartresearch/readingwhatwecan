@@ -1,89 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" data-wf-page="624c7369b0dedd3b81dce09d" data-wf-site="622160bba1d5c0dcf96f8bdf">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Reading What We Can</title>
   <meta content="Reading What We Can" property="og:title" />
+  <meta content="Reading lists for the future — The Gauntlet challenge for AI safety" property="og:description" />
   <meta content="https://uploads-ssl.webflow.com/622160bba1d5c0dcf96f8bdf/628aa6f158ffb73d323ba215_openpic-rwwc.png" property="og:image" />
   <meta content="Reading What We Can" property="twitter:title" />
   <meta content="https://uploads-ssl.webflow.com/622160bba1d5c0dcf96f8bdf/628aa6f158ffb73d323ba215_openpic-rwwc.png" property="twitter:image" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    WebFont.load({
-      google: {
-        families: [
-          "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic",
-          "Sora:regular,700",
-          "Hahmlet:regular,700",
-          "JetBrains Mono:regular",
-        ],
-      },
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link href="images/webclip.ico" rel="apple-touch-icon" />
   <link href="./style.css" rel="stylesheet" type="text/css" />
+  <script src="./books.js" type="text/javascript"></script>
   <script src="./script.js" type="text/javascript" defer></script>
-  <script src="./books.js" type="text/javascript"></script> <!-- Use local books.js for now -->
 </head>
-<body class="bg-gray-900 text-gray-100">
-  <header class="sticky top-0 bg-gray-800 shadow-lg z-50">
-    <nav class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="flex items-center" aria-current="page">
-        <img src="images/Group-55.png" width="209" alt="Reading What We Can Logo" class="nav-logo" />
-      </a>
-      <a href="mailto:esben@apartresearch.com?subject=Reading%20what%20we%20can" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 transition">Contact</a>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="logo">RWWC</span>
+      <span class="header-sep">/</span>
+      <span class="header-subtitle">reading what we can</span>
+    </div>
+    <nav class="header-right">
+      <a href="https://twitter.com/search?q=%23rwwc" target="_blank">#rwwc</a>
+      <a href="https://github.com/apartresearch/readingwhatwecan" target="_blank">github</a>
+      <a href="mailto:esben@apartresearch.com?subject=Reading%20what%20we%20can" class="contact-link">contact</a>
     </nav>
   </header>
-  <div class="section-3 py-12">
-    <div class="container mx-auto">
-      <h1 class="text-4xl font-bold text-center mb-2">Reading What We Can
-        <span class="block text-xl italic text-gray-400">Reading lists for the future</span>
-      </h1>
-      <p class="text-lg text-center mb-6 max-w-2xl mx-auto">
-        The Gauntlet is a challenge to read 20 books or articles in 20 days. Post online with
-        <a href="https://twitter.com/search?q=%23rwwc" target="_blank" class="text-indigo-400 hover:underline">#rwwc</a>.
-        It is <strong>in development</strong> so
-        <a href="mailto:esben@apartresearch.com?subject=AI%20Gauntlet%20suggestion%3A%20" class="text-indigo-400 hover:underline">write to us</a>
-        if you would like a feature, learning path, book, or paper added to the project!
-      </p>
-      <a href="https://github.com/apartresearch/readingwhatwecan" class="block text-center text-indigo-400 hover:underline mb-8">Contribute by submitting a pull request</a>
-    </div>
-    <div class="container mx-auto">
-      <div class="gauntlet-tabs flex flex-col md:flex-row gap-4">
-        <div class="gauntlet-tabs-menu w-full md:w-1/4">
-          <a data-w-tab="I am a beginner in AI safety" class="gauntlet-tab block p-4 bg-gray-800 rounded-lg mb-2 text-center md:text-left hover:bg-indigo-600 transition w--current">AI safety basics</a>
-          <a data-w-tab="I come from ML engineering" class="gauntlet-tab block p-4 bg-gray-800 rounded-lg mb-2 text-center md:text-left hover:bg-indigo-600 transition">ML engineering & AI safety</a>
-          <a data-w-tab="I come from AI safety and want to upskill in ML" class="gauntlet-tab block p-4 bg-gray-800 rounded-lg mb-2 text-center md:text-left hover:bg-indigo-600 transition">ML upskilling</a>
-          <a data-w-tab="Sci-fi" class="gauntlet-tab block p-4 bg-gray-800 rounded-lg mb-2 text-center md:text-left hover:bg-indigo-600 transition">AI safety-relevant sci-fi</a>
-        </div>
-        <div class="w-tab-content w-full md:w-3/4">
-          <div data-w-tab="I am a beginner in AI safety" class="w-tab-pane w--tab-active">
-            <div id="beginner-parent" class="gauntlet-wrapper grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-          </div>
-          <div data-w-tab="I come from ML engineering" class="w-tab-pane">
-            <div id="ml-parent" class="gauntlet-wrapper grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-          </div>
-          <div data-w-tab="I come from AI safety and want to upskill in ML" class="w-tab-pane">
-            <div id="aisafety-parent" class="gauntlet-wrapper grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-          </div>
-          <div data-w-tab="Sci-fi" class="w-tab-pane">
-            <div id="scifi-parent" class="gauntlet-wrapper grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-          </div>
-        </div>
+
+  <main>
+    <section class="hero">
+      <h1>Reading What We Can</h1>
+      <p class="tagline">Reading lists for the future. The Gauntlet: read 20 books or articles in 20 days.</p>
+      <p class="hero-meta">Post your progress with <a href="https://twitter.com/search?q=%23rwwc" target="_blank">#rwwc</a> &middot; <a href="https://github.com/apartresearch/readingwhatwecan" target="_blank">Contribute on GitHub</a> &middot; A project by <a href="https://apartresearch.com" target="_blank">Apart Research</a></p>
+    </section>
+
+    <section class="graph-section">
+      <div class="graph-header">
+        <h2>Reading Activity</h2>
+        <div id="stats" class="stats"></div>
       </div>
-    </div>
-  </div>
-  <div id="ai-gauntlet" class="section-2 py-12 bg-gray-800">
-    <div class="container mx-auto text-center">
-      <p class="text-lg max-w-3xl mx-auto">
-        This was originally a project called The AI Safety Gauntlet: "The Gauntlet is a challenge to read 20 books or articles in 20 days. The below books and articles are meant as an introduction to the field of AI safety. Read them and post online with #AIgauntlet. In development. Write to us if you would like a feature, learning path, book or paper added to the project!" ReadingWhatWeCan is a spinout from Apart Research.
-      </p>
-    </div>
-  </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <div id="contribution-graph" class="contribution-graph"></div>
+      <div class="graph-footer">
+        <span class="graph-less">Less</span>
+        <div class="graph-legend">
+          <span class="legend-square" style="background: #161b22"></span>
+          <span class="legend-square" style="background: #0e4429"></span>
+          <span class="legend-square" style="background: #006d32"></span>
+          <span class="legend-square" style="background: #26a641"></span>
+          <span class="legend-square" style="background: #39d353"></span>
+        </div>
+        <span class="graph-more">More</span>
+      </div>
+    </section>
+
+    <section class="lists-section">
+      <div class="tab-bar" role="tablist">
+        <button class="tab active" data-tab="first_entry" role="tab" aria-selected="true">AI Safety Basics <span class="tab-count" id="count-first_entry"></span></button>
+        <button class="tab" data-tab="ml" role="tab" aria-selected="false">ML Engineering <span class="tab-count" id="count-ml"></span></button>
+        <button class="tab" data-tab="ais" role="tab" aria-selected="false">ML Upskilling <span class="tab-count" id="count-ais"></span></button>
+        <button class="tab" data-tab="scifi" role="tab" aria-selected="false">Sci-Fi <span class="tab-count" id="count-scifi"></span></button>
+      </div>
+
+      <div class="list-header">
+        <span class="col-check"></span>
+        <span class="col-num">#</span>
+        <span class="col-title">Title</span>
+        <span class="col-author">Author</span>
+        <span class="col-type">Source</span>
+        <span class="col-pages">Pages</span>
+      </div>
+
+      <div id="list-first_entry" class="book-list active"></div>
+      <div id="list-ml" class="book-list"></div>
+      <div id="list-ais" class="book-list"></div>
+      <div id="list-scifi" class="book-list"></div>
+    </section>
+
+    <footer>
+      <p>Originally "The AI Safety Gauntlet" &mdash; a challenge to read 20 books or articles in 20 days as an introduction to AI safety. ReadingWhatWeCan is a spinout from <a href="https://apartresearch.com" target="_blank">Apart Research</a>.</p>
+    </footer>
+  </main>
+
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </body>

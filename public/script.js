@@ -23,8 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(STORAGE_KEY_ACTIVITY, JSON.stringify(data));
   }
 
+  function toLocalDateStr(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
   function todayStr() {
-    return new Date().toISOString().split('T')[0];
+    return toLocalDateStr(new Date());
   }
 
   // ── Toggle book completion ──
@@ -242,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Skip future dates
         if (cellDate > today) continue;
 
-        const dateStr = cellDate.toISOString().split('T')[0];
+        const dateStr = toLocalDateStr(cellDate);
         const count = activity[dateStr] || 0;
         const x = LEFT_PAD + w * (CELL + GAP);
         const y = TOP_PAD + d * (CELL + GAP);
@@ -304,13 +311,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkDate = new Date(today);
 
     // Check if today has activity; if not, start from yesterday
-    const todayKey = checkDate.toISOString().split('T')[0];
+    const todayKey = toLocalDateStr(checkDate);
     if (!activity[todayKey]) {
       checkDate.setDate(checkDate.getDate() - 1);
     }
 
     while (true) {
-      const key = checkDate.toISOString().split('T')[0];
+      const key = toLocalDateStr(checkDate);
       if (activity[key] && activity[key] > 0) {
         streak++;
         checkDate.setDate(checkDate.getDate() - 1);
@@ -395,10 +402,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const checkDate = new Date(today);
-    const todayKey = checkDate.toISOString().split('T')[0];
+    const todayKey = toLocalDateStr(checkDate);
     if (!activity[todayKey]) checkDate.setDate(checkDate.getDate() - 1);
     while (true) {
-      const key = checkDate.toISOString().split('T')[0];
+      const key = toLocalDateStr(checkDate);
       if (activity[key] && activity[key] > 0) {
         streak++;
         checkDate.setDate(checkDate.getDate() - 1);
